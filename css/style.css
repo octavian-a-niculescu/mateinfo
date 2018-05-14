@@ -1,0 +1,1704 @@
+/*CSS PENTRU INDEX.HTML*/
+/*CSS PENTRU INDEX.HTML*/
+/*CSS PENTRU INDEX.HTML*/
+/*CSS PENTRU INDEX.HTML*/
+/*CSS PENTRU INDEX.HTML*/
+
+body {
+    width: 100%;
+    text-rendering: optimizeLegibility; /*setam textul sa fie optimzat pentru o lizbilitate mai buna, in detrimentul vitezei de incarcare si a preciziei geometrice*/
+    font-weight: 200;
+    font-size: 15px;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #fff;
+    height: 100%;
+    animation-name: tranzitie-inceput;
+    animation-duration: 0.5s;
+}
+
+@keyframes tranzitie-inceput {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.index-mate-poza {
+    z-index: 1;
+}
+
+#mate, #info {
+		font-weight: bold;
+		font-size: 5rem;
+		text-transform: uppercase; /*transformam textul in MAJUSCULE*/
+		text-align: center;
+		background-color: #429ba8;
+		height: 50%;
+		position: relative;
+}
+
+#mate {
+    border-bottom: 1px solid #D3D3D3; /*inseram un border gri, subtire, ce va avea efectul de umbra/diferentiere a celor 2 jumatati*/
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.1) 0, #429ba8 65%), url(../img/mate.jpg);
+    position: relative;
+    z-index: 999;
+    text-align: center;
+}
+
+#mate:before {
+        content: "";
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 10;
+        background: url(../img/mate.jpg);
+        opacity: 0;
+        transition: all 1s;
+        z-index: 1;
+}
+
+#mate:hover:before {
+        opacity: 1;
+        z-index: 1;
+}
+
+#info {
+    background-image: linear-gradient(to left, rgba(255, 255, 255, 0.1) 0, #87cebf 65%), url(../img/info.jpg);
+    position: relative;
+    z-index: 999;
+    text-align: center;
+}
+
+#info:before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    background: url(../img/info.jpg);
+    opacity: 0;
+    transition: all 1s;
+    z-index: 1;
+}
+
+#info:hover:before {
+    opacity: 1;
+    z-index: 1;
+}
+
+#container-index {
+    height: 100vh; /*div-ul container va fi egal cu toata inaltimea viewport-ului, ceea ce va face ca continutul sa fie la fel de mare ca suprafata vizibila a device-ului utilizatorului*/
+    user-select: none; /*dezactivam selectia utilizatorului*/
+    cursor: pointer;
+    overflow: hidden; /*dezactivam scrollbar-urile in cazul in care continutul depaseste "element's box"*/
+}
+
+.text-mate {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%); /*centram textul VERTICAL in interiorul parintelui #MATE*/
+}
+
+.text-info {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%); /*centram textul VERTICAL in interiorul parintelui #INFO*/
+}
+
+.hover { /*pregatim clasa ce se va adauga div-ului peste care trecem cu mouse-ul, utilizand jQuery*/
+    transition: 2s; /*folosim un efect incet in care elementul se mareste*/
+    height: 75% !important;
+}
+
+.default { /*pregatim clasa ce se va adauga celuilalt div fata de cel pe care se trece mouse-ul, utilizand jQuery*/
+    transition: 1.5s;
+    height: 50% !important; /*folosim un efect rapid in care se va ajunge la forma initiala*/
+}
+
+.not-hovered-on { /*pregatim clasa ce se va adauga celuilalt div fata de cel pe care se trece mouse-ul, utilizand jQuery*/
+    transition: 2s; 
+    height: 25% !important; /*folosim un efect incet in care elementul se micsoreaza*/
+}
+
+/*CSS PENTRU PAGINA-MATE.HTML*/
+/*CSS PENTRU PAGINA-MATE.HTML*/
+/*CSS PENTRU PAGINA-MATE.HTML*/
+/*CSS PENTRU PAGINA-MATE.HTML*/
+/*CSS PENTRU PAGINA-MATE.HTML*/
+/*CSS PENTRU PAGINA-MATE.HTML*/
+/*CSS PENTRU PAGINA-MATE.HTML*/
+
+#container-mate {
+    background: #e6e7d0 url('../img/bg-mate.png');
+}
+
+/*HEADER-UL PAGINII*/
+
+#meniu-mate {
+    max-width: 1500px;
+    margin: 0 auto; /*meniul este centrat orizontal*/
+    background-color: #fff;
+    height: 100%;
+}
+
+.mate-sus {
+    height: 10rem;
+    background: linear-gradient(to right, #7ec7bc, #63b4b3 15%, #429ba8);
+}
+
+.mate-sus-nerd {
+    float: right;
+    width: 9%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 65px;
+}
+
+.citat-mate-sus {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-left: 85px;
+}
+
+.nav-bar-pagina-mate {
+    height: 3rem;
+    background: linear-gradient(to right, #9bddc5 15%, #34bab8);
+    margin-bottom: 1.5rem;
+}
+
+    .nav-bar-pagina-mate > ul {
+        display: inline-block;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-left: 1.5rem;
+        font-size: 1.5rem;
+    }
+
+        .nav-bar-pagina-mate > ul > li {
+            display: inline;
+        }
+
+            .nav-bar-pagina-mate > ul > li > a {
+                text-decoration: none;
+                color: #fff;
+                font-style: italic;
+            }
+
+/*CONTINUTUL PAGINII*/
+
+#cursuri-mate {
+    height: 12rem;
+    max-width: 90%;
+    margin: 0 auto;
+    background-color: #429ba8;
+    margin-bottom: 1.5rem;
+}
+
+.cursuri-text-mate {
+    font-size: 4rem;
+    position: relative;
+    transform: translateY(-50%);
+    top: 50%;
+    margin-left: 4rem;
+}
+
+.selectie-clasa-mate-cursuri,
+.selectie-clasa-mate-exercitii, 
+.selectie-clasa-mate-quiz {
+    font-size: 2.5rem;
+    margin-left: 2rem;
+    opacity: 0;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.cifre-clasa {
+    float: right;
+    display: inline;
+}
+
+.cifre-clasa > ul {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 50px;
+}
+
+.home-mate {
+   float: left;
+   position: relative;
+   top: 50%;
+   transform: translateY(-50%);
+   margin-left: 2rem;
+   font-size: 2rem;
+   text-decoration: none;
+   color: #fff;
+   transition: 1s;
+}
+
+.back-mate {
+    float: left;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 2rem;
+    font-size: 2rem;
+    text-decoration: none;
+    color: #fff;
+    transition: 1s;
+}
+
+.back-mate:hover {
+        color: #429ba8;
+}
+
+.home-mate:hover {
+        color: #429ba8;
+}
+
+.comutare-mate {
+    float: right;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 2rem;
+    font-size: 2rem;
+    text-decoration: none;
+    color: #fff;
+    transition: 1s;
+}
+
+.comutare-mate:hover {
+        color: #429ba8;
+}
+
+.cifre-clasa > ul > li {
+        opacity: 0;
+        margin: 5px;
+        display: inline-block;
+}
+
+.cifre-clasa > ul > li > a > img {
+        width: 85%;
+}
+
+.cifre {
+    width: 35%;
+    margin-left: 400px;
+    margin-top: -55px;
+}
+
+.fa-book {
+    color: black;
+    position: relative;
+    transform: translateY(-50%);
+    top: 50%;
+    float: right;
+    margin-right: 2rem;
+    font-size: 6rem;
+}
+
+#exercitii-mate {
+    height: 12rem;
+    max-width: 90%;
+    margin: 0 auto;
+    background-color: #429ba8;
+    margin-bottom: 1.5rem;
+}
+
+.exercitii-text-mate {
+    font-size: 4rem;
+    position: relative;
+    transform: translateY(-50%);
+    top: 50%;
+    margin-left: 4rem;
+}
+
+#quiz-mate {
+    height: 12rem;
+    max-width: 90%;
+    margin: 0 auto;
+    background-color: #429ba8;
+    margin-bottom: 1.5rem;
+}
+
+.quiz-text-mate {
+    font-size: 4rem;
+    position: relative;
+    transform: translateY(-50%);
+    top: 50%;
+    margin-left: 4rem;
+}
+
+.fa-pencil-alt {
+    color: black;
+    position: relative;
+    transform: translateY(-50%);
+    top: 50%;
+    float: right;
+    margin-right: 2rem;
+    font-size: 6rem;
+}
+
+.fa-question {
+    color: black;
+    position: relative;
+    transform: translateY(-50%);
+    top: 50%;
+    float: right;
+    font-size: 6rem;
+    margin-right: 2rem;
+}
+
+.fa-lightbulb {
+    color: black;
+    position: relative;
+    transform: translateY(-50%);
+    top: 50%;
+    float: right;
+    margin-right: 2rem;
+    font-size: 6rem;
+}
+
+#variante-mate {
+    height: 12rem;
+    max-width: 90%;
+    margin: 0 auto;
+    background-color: #429ba8;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+}
+
+.variante-text-mate {
+    font-size: 4rem;
+    position: relative;
+    transform: translateY(-50%);
+    top: 50%;
+    margin-left: 4rem;
+}
+
+.fa-pencil-alt {
+    color: black;
+    position: relative;
+    transform: translateY(-50%);
+    top: 50%;
+    float: right;
+    margin-right: 2rem;
+}
+
+/*FOOTER*/
+
+.mate-jos {
+    background-color: #28494e;
+    width: 100%;
+    color: white;
+    text-align: right;
+    height: 12.2rem;
+    position: relative;
+}
+
+.mate-jos-text {
+    font-size: 1.1rem;
+}
+
+#contact-footer {
+    float: right;
+    margin-right: 6rem;
+}
+
+#contact-footer i {
+        font-size: 5rem;
+        padding: 0 3.6rem;
+        margin-bottom: 1rem;
+}
+
+.footer-social {
+    float: right;
+    position: absolute;
+    bottom: 14%;
+    right: 5%;
+}
+
+.logo-mateinfo {
+    float: left;
+    width: 7.5%;
+    left: 5%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+/*CSS PENTRU PAGINA-INFO.HTML*/
+/*CSS PENTRU PAGINA-INFO.HTML*/
+/*CSS PENTRU PAGINA-INFO.HTML*/
+/*CSS PENTRU PAGINA-INFO.HTML*/
+/*CSS PENTRU PAGINA-INFO.HTML*/
+/*CSS PENTRU PAGINA-INFO.HTML*/
+#container-info {
+    background: #e6e7d0 url('../img/bg-info.png');
+}
+
+/*HEADER-UL PAGINII*/
+
+#meniu-info {
+    max-width: 1500px;
+    margin: 0 auto; /*meniul este centrat orizontal*/
+    background-color: #fff;
+    height: 100%;
+}
+
+.info-sus {
+    height: 10rem;
+    background: linear-gradient(to right, #87cebf, #86cdbf 75%, #439ba8);
+}
+
+.info-sus-nerd {
+    float: right;
+    width: 9%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 65px;
+}
+
+.citat-info-sus {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    font-weight: bold;
+    margin-left: 85px;
+}
+
+.nav-bar-pagina-info {
+    height: 3rem;
+    background: linear-gradient(to right, #a6e1c6 60%, #56c6bc);
+    margin-bottom: 1.5rem;
+}
+
+    .nav-bar-pagina-info > ul {
+        display: inline-block;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-left: 1.5rem;
+        font-size: 1.5rem;
+    }
+
+        .nav-bar-pagina-info > ul > li {
+            display: inline;
+        }
+
+            .nav-bar-pagina-info > ul > li > a {
+                text-decoration: none;
+                color: #fff;
+                font-style: italic;
+            }
+
+/*CONTINUTUL PAGINII*/
+
+#cursuri-info {
+    height: 12rem;
+    max-width: 90%;
+    margin: 0 auto;
+    background-color: #87cebf;
+    margin-bottom: 1.5rem;
+}
+
+.cursuri-text-info {
+    font-size: 4rem;
+    position: relative;
+    transform: translateY(-50%);
+    top: 50%;
+    margin-left: 4rem;
+}
+
+.selectie-clasa-info-cursuri,
+.selectie-clasa-info-exercitii,
+.selectie-clasa-info-quiz {
+    font-size: 2.5rem;
+    margin-left: 2rem;
+    opacity: 0;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.cifre-clasa {
+    float: right;
+    display: inline;
+}
+
+    .cifre-clasa > ul {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-right: 50px;
+    }
+
+.home-info {
+    float: left;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 2rem;
+    font-size: 2rem;
+    text-decoration: none;
+    color: #fff;
+    transition: 1s;
+}
+
+.back-info {
+    float: left;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 2rem;
+    font-size: 2rem;
+    text-decoration: none;
+    color: #fff;
+    transition: 1s;
+}
+
+    .back-info:hover {
+        color: #87cebf;
+    }
+
+.home-info:hover {
+    color: #87cebf;
+}
+
+.comutare-info {
+    float: right;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 2rem;
+    font-size: 2rem;
+    text-decoration: none;
+    color: #fff;
+    transition: 1s;
+}
+
+    .comutare-info:hover {
+        color: #429ba8;
+    }
+
+.cifre-clasa > ul > li {
+    opacity: 0;
+    margin: 5px;
+    display: inline-block;
+}
+
+    .cifre-clasa > ul > li > a > img {
+        width: 85%;
+    }
+
+.cifre {
+    width: 35%;
+    margin-left: 400px;
+    margin-top: -55px;
+}
+
+.fa-book {
+    color: black;
+    position: relative;
+    transform: translateY(-50%);
+    top: 50%;
+    float: right;
+    margin-right: 2rem;
+    font-size: 6rem;
+}
+
+#exercitii-info {
+    height: 12rem;
+    max-width: 90%;
+    margin: 0 auto;
+    background-color: #87cebf;
+    margin-bottom: 1.5rem;
+}
+
+.exercitii-text-info {
+    font-size: 4rem;
+    position: relative;
+    transform: translateY(-50%);
+    top: 50%;
+    margin-left: 4rem;
+}
+
+#quiz-info {
+    height: 12rem;
+    max-width: 90%;
+    margin: 0 auto;
+    background-color: #87cebf;
+    margin-bottom: 1.5rem;
+}
+
+.quiz-text-info {
+    font-size: 4rem;
+    position: relative;
+    transform: translateY(-50%);
+    top: 50%;
+    margin-left: 4rem;
+}
+
+.fa-pencil-alt {
+    color: black;
+    position: relative;
+    transform: translateY(-50%);
+    top: 50%;
+    float: right;
+    margin-right: 2rem;
+    font-size: 6rem;
+}
+
+.fa-question {
+    color: black;
+    position: relative;
+    transform: translateY(-50%);
+    top: 50%;
+    float: right;
+    font-size: 6rem;
+    margin-right: 2rem;
+}
+
+.fa-lightbulb {
+    color: black;
+    position: relative;
+    transform: translateY(-50%);
+    top: 50%;
+    float: right;
+    margin-right: 2rem;
+    font-size: 6rem;
+}
+
+#variante-info {
+    height: 12rem;
+    max-width: 90%;
+    margin: 0 auto;
+    background-color: #87cebf;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+}
+
+.variante-text-info {
+    font-size: 4rem;
+    position: relative;
+    transform: translateY(-50%);
+    top: 50%;
+    margin-left: 4rem;
+}
+
+.fa-pencil-alt {
+    color: black;
+    position: relative;
+    transform: translateY(-50%);
+    top: 50%;
+    float: right;
+    margin-right: 2rem;
+}
+
+/*FOOTER*/
+
+.info-jos {
+    background-color: #38675d;
+    width: 100%;
+    color: white;
+    text-align: right;
+    height: 12.2rem;
+    position: relative;
+}
+
+.info-jos-text {
+    font-size: 1.1rem;
+}
+
+/*CSS PENTRU CURSURI-MATE.HTML*/
+/*CSS PENTRU CURSURI-MATE.HTML*/
+/*CSS PENTRU CURSURI-MATE.HTML*/
+/*CSS PENTRU CURSURI-MATE.HTML*/
+/*CSS PENTRU CURSURI-MATE.HTML*/
+/*CSS PENTRU CURSURI-MATE.HTML*/
+/*ESTE FOLOSIT ACELASI CSS PENTRU HEADER, FOOTER CA LA PAGINA-MATE.HTML*/
+
+#cursuri-mate-container {
+    max-width: 1500px;
+    margin: 0 auto; /*meniul este centrat orizontal*/
+    background-color: #fff;
+    height: 100%;
+}
+
+#cursuri-mate-centru {
+    font-size: 5rem;
+    color: #000;
+    font-family: 'Proxima Nova', 'Roboto Condensed';
+    margin-top: 2rem;
+    overflow: hidden;
+}
+
+.semestrul1-cursuri-mate {
+    background: linear-gradient(to right, #499fab, #86bfc7 20%, #abd3d8 50%, #fff);
+    width: 95%;
+    padding: 1rem 0 1rem 3rem;
+    margin-bottom: 1.25rem;
+    margin-left: 2rem;
+    color: #fff;
+}
+
+.cursuri-mate-lista {
+    font-size: 4rem;
+    margin-left: 2rem;
+    color: #fff;
+    float: left;
+}
+
+.cursuri-mate-lista > li {
+        height: 4rem;
+        max-width: 250px;
+        width: 100%;
+        background-color: #429ba8;
+        margin-bottom: 0.8rem;
+        padding-left: 1rem;
+}
+
+.cursuri-mate-1:hover,
+.cursuri-mate-2:hover,
+.cursuri-mate-3:hover {
+    color: #7ec7bc;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.fereastra-mate-curs-1 {
+    float: right;
+    color: #000;
+    background: #ffffff url('../img/bg-exercitii-mate.jpg') repeat;
+    border: 1px solid #000;
+    max-width: 1150px;
+    margin-right: 2rem;
+}
+
+.header-mate-curs-1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.fereastra-mate-curs-1 > p {
+    font-size: 1.75rem;
+    line-height: 1.39;
+}
+
+.fereastra-mate-curs-2 {
+    float: right;
+    color: #000;
+    background: #ffffff url('../img/bg-exercitii-mate.jpg') repeat;
+    border: 1px solid #000;
+    margin-right: 2rem;
+    max-width: 1150px;
+    display: none;
+}
+
+.header-mate-curs-2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.fereastra-mate-curs-2 > p {
+    font-size: 1.75rem;
+    line-height: 1.39;
+}
+
+.fereastra-mate-curs-3 {
+    float: right;
+    color: #000;
+    background: #ffffff url('../img/bg-exercitii-mate.jpg') repeat;
+    border: 1px solid #000;
+    margin-right: 2rem;
+    max-width: 1150px;
+    display: none;
+}
+
+.header-mate-curs-3 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.fereastra-mate-curs-3 > p {
+    font-size: 1.75rem;
+    line-height: 1.39;
+}
+
+/*CSS PENTRU EXERCITII-MATE.HTML*/
+/*CSS PENTRU EXERCITII-MATE.HTML*/
+/*CSS PENTRU EXERCITII-MATE.HTML*/
+/*CSS PENTRU EXERCITII-MATE.HTML*/
+/*CSS PENTRU EXERCITII-MATE.HTML*/
+/*CSS PENTRU EXERCITII-MATE.HTML*/
+/*ESTE FOLOSIT ACELASI CSS PENTRU HEADER, FOOTER CA LA PAGINA-MATE.HTML*/
+
+#exercitii-mate-container {
+    max-width: 1500px;
+    margin: 0 auto; /*meniul este centrat orizontal*/
+    background-color: #fff;
+    height: 100%;
+}
+
+#exercitii-mate-centru {
+    font-size: 5rem;
+    color: #000;
+    font-family: 'Proxima Nova', 'Roboto Condensed';
+    margin-top: 2rem;
+    overflow: hidden;
+}
+
+.semestrul1-exercitii-mate {
+    background: linear-gradient(to right, #499fab, #86bfc7 20%, #abd3d8 50%, #fff);
+    width: 95%;
+    padding: 1rem 0 1rem 3rem;
+    margin-bottom: 1.25rem;
+    margin-left: 2rem;
+    color: #fff;
+}
+
+.exercitii-mate-lista {
+    font-size: 3.2rem;
+    margin-left: 2rem;
+    color: #fff;
+    float: left;
+}
+
+.exercitii-mate-lista > li {
+        height: 4rem;
+        line-height: 4rem;
+        max-width: 250px;
+        width: 100%;
+        background-color: #429ba8;
+        margin-bottom: 0.8rem;
+        padding-left: 1rem;
+        text-transform: capitalize;
+}
+
+.exercitii-mate-1:hover,
+.exercitii-mate-2:hover,
+.exercitii-mate-3:hover {
+    color: #7ec7bc;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.fereastra-mate-exercitii-1 {
+    float: right;
+    color: #000;
+    background: #ffffff url('../img/bg-exercitii-mate.jpg') repeat;
+    border: 1px solid #000;
+    max-width: 1150px;
+    margin-right: 2rem;
+}
+
+.header-mate-exercitii-1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.fereastra-mate-exercitii-1 > p {
+    font-size: 1.75rem;
+    line-height: 1.39;
+}
+
+.fereastra-mate-exercitii-2 {
+    float: right;
+    color: #000;
+    background: #ffffff url('../img/bg-exercitii-mate.jpg') repeat;
+    border: 1px solid #000;
+    margin-right: 2rem;
+    max-width: 1150px;
+    display: none;
+}
+
+.header-mate-exercitii-2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.fereastra-mate-exercitii-2 > p {
+    font-size: 1.75rem;
+    line-height: 1.39;
+}
+
+.fereastra-mate-exercitii-3 {
+    float: right;
+    color: #000;
+    background: #ffffff url('../img/bg-exercitii-mate.jpg') repeat;
+    border: 1px solid #000;
+    margin-right: 2rem;
+    max-width: 1150px;
+    display: none;
+}
+
+.header-mate-exercitii-3 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.fereastra-mate-exercitii-3 > p {
+    font-size: 1.75rem;
+    line-height: 1.39;
+}
+
+/*CSS PENTRU QUIZ-MATE.HTML*/
+/*CSS PENTRU QUIZ-MATE.HTML*/
+/*CSS PENTRU QUIZ-MATE.HTML*/
+/*CSS PENTRU QUIZ-MATE.HTML*/
+/*CSS PENTRU QUIZ-MATE.HTML*/
+/*CSS PENTRU QUIZ-MATE.HTML*/
+
+#quiz-mate-container {
+    max-width: 1500px;
+    margin: 0 auto; /*meniul este centrat orizontal*/
+    background-color: #fff;
+    height: 100%;
+}
+
+#quiz-mate-centru {
+    font-size: 5rem;
+    color: #000;
+    font-family: 'Proxima Nova', 'Roboto Condensed';
+    margin-top: 2rem;
+    overflow: hidden;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.semestrul1-quiz-mate {
+    background: linear-gradient(to right, #499fab, #86bfc7 20%, #abd3d8 50%, #fff);
+    width: 95%;
+    padding: 1rem 0 1rem 3rem;
+    margin-bottom: 1.25rem;
+    color: #fff;
+}
+
+.quiz-1-mate {
+    font-size: 4.2rem;
+    text-align: center;
+    background: #ffffff url('../img/bg-exercitii-mate.jpg') repeat;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 0.5rem;
+    border-bottom: solid #4ea1af 1px;
+}
+
+#quiz-1-raspunsuri-mate-wrap > ul > li {
+    background-color: #499fab;
+    width: 95%;
+    margin: 0 auto;
+    margin-bottom: 2px;
+    color: #fff;
+    font-size: 3rem;
+}
+
+#quiz-1-raspunsuri-mate-wrap > ul {
+    margin-bottom: 2rem;
+}
+
+.quiz-2-mate {
+    font-size: 4.2rem;
+    text-align: center;
+    background: #ffffff url('../img/bg-exercitii-mate.jpg') repeat;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 0.5rem;
+    border-bottom: solid #4ea1af 1px;
+}
+
+#quiz-2-raspunsuri-mate-wrap > ul > li {
+    background-color: #499fab;
+    width: 95%;
+    margin: 0 auto;
+    margin-bottom: 2px;
+    color: #fff;
+    font-size: 3rem;
+}
+
+#quiz-2-raspunsuri-mate-wrap > ul {
+    margin-bottom: 2rem;
+}
+
+.quiz-3-mate {
+    font-size: 4.2rem;
+    text-align: center;
+    background: #ffffff url('../img/bg-exercitii-mate.jpg') repeat;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 0.5rem;
+    border-bottom: solid #4ea1af 1px;
+}
+
+#quiz-3-raspunsuri-mate-wrap > ul > li {
+    background-color: #499fab;
+    width: 95%;
+    margin: 0 auto;
+    margin-bottom: 2px;
+    color: #fff;
+    font-size: 3rem;
+}
+
+#quiz-3-raspunsuri-mate-wrap > ul {
+    margin-bottom: 2rem;
+}
+
+.fa-times {
+    float: right;
+    margin-right: 1rem;
+    color: red;
+}
+
+.fa-check {
+    float: right;
+    margin-right: 1rem;
+    color: green;
+}
+
+/*CSS PENTRU QUIZ-INFO.HTML*/
+/*CSS PENTRU QUIZ-INFO.HTML*/
+/*CSS PENTRU QUIZ-INFO.HTML*/
+/*CSS PENTRU QUIZ-INFO.HTML*/
+/*CSS PENTRU QUIZ-INFO.HTML*/
+
+#quiz-info-container {
+    max-width: 1500px;
+    margin: 0 auto; /*meniul este centrat orizontal*/
+    background-color: #fff;
+    height: 100%;
+}
+
+#quiz-info-centru {
+    font-size: 5rem;
+    color: #000;
+    font-family: 'Proxima Nova', 'Roboto Condensed';
+    margin-top: 2rem;
+    overflow: hidden;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.semestrul1-quiz-info {
+    background: linear-gradient(to right, #87cebf, #86cdbf 50%, #bedde1 70%, #fff);
+    width: 95%;
+    padding: 1rem 0 1rem 3rem;
+    margin-bottom: 1.25rem;
+    color: #fff;
+}
+
+.quiz-1-info {
+    font-size: 4.2rem;
+    text-align: center;
+    background: #ffffff url('../img/bg-exercitii-mate.jpg') repeat;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 0.5rem;
+    border-bottom: solid #4ea1af 1px;
+}
+
+#quiz-1-raspunsuri-info-wrap > ul > li {
+    background-color: #87cebf;
+    width: 95%;
+    margin: 0 auto;
+    margin-bottom: 2px;
+    color: #fff;
+    font-size: 3rem;
+}
+
+#quiz-1-raspunsuri-info-wrap > ul {
+    margin-bottom: 2rem;
+}
+
+.quiz-2-info {
+    font-size: 4.2rem;
+    text-align: center;
+    background: #ffffff url('../img/bg-exercitii-mate.jpg') repeat;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 0.5rem;
+    border-bottom: solid #4ea1af 1px;
+}
+
+#quiz-2-raspunsuri-info-wrap > ul > li {
+    background-color: #87cebf;
+    width: 95%;
+    margin: 0 auto;
+    margin-bottom: 2px;
+    color: #fff;
+    font-size: 3rem;
+}
+
+#quiz-2-raspunsuri-info-wrap > ul {
+    margin-bottom: 2rem;
+}
+
+.quiz-3-info {
+    font-size: 4.2rem;
+    text-align: center;
+    background: #ffffff url('../img/bg-exercitii-mate.jpg') repeat;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 0.5rem;
+    border-bottom: solid #4ea1af 1px;
+}
+
+#quiz-3-raspunsuri-info-wrap > ul > li {
+    background-color: #87cebf;
+    width: 95%;
+    margin: 0 auto;
+    margin-bottom: 2px;
+    color: #fff;
+    font-size: 3rem;
+}
+
+#quiz-3-raspunsuri-info-wrap > ul {
+    margin-bottom: 2rem;
+}
+
+.fa-times {
+    float: right;
+    margin-right: 1rem;
+    color: red;
+}
+
+.fa-check {
+    float: right;
+    margin-right: 1rem;
+    color: green;
+}
+
+/*CSS PENTRU CURSURI-info.HTML*/
+/*CSS PENTRU CURSURI-info.HTML*/
+/*CSS PENTRU CURSURI-info.HTML*/
+/*CSS PENTRU CURSURI-info.HTML*/
+/*CSS PENTRU CURSURI-info.HTML*/
+/*CSS PENTRU CURSURI-info.HTML*/
+/*ESTE FOLOSIT ACELASI CSS PENTRU HEADER, FOOTER CA LA PAGINA-info.HTML*/
+
+#cursuri-info-container {
+    max-width: 1500px;
+    margin: 0 auto; /*meniul este centrat orizontal*/
+    background-color: #fff;
+    height: 100%;
+}
+
+#cursuri-info-centru {
+    font-size: 5rem;
+    color: #000;
+    font-family: 'Proxima Nova', 'Roboto Condensed';
+    margin-top: 2rem;
+    overflow: hidden;
+}
+
+.semestrul1-cursuri-info {
+    background: linear-gradient(to right, #87cebf, #86cdbf 50%, #bedde1 70%, #fff);
+    width: 95%;
+    padding: 1rem 0 1rem 3rem;
+    margin-bottom: 1.25rem;
+    margin-left: 2rem;
+    color: #fff;
+}
+
+.cursuri-info-lista {
+    font-size: 4rem;
+    margin-left: 2rem;
+    color: #fff;
+    float: left;
+}
+
+    .cursuri-info-lista > li {
+        height: 4rem;
+        max-width: 250px;
+        width: 100%;
+        background-color: #7ec7bc;
+        margin-bottom: 0.8rem;
+        padding-left: 1rem;
+    }
+
+.cursuri-info-1:hover,
+.cursuri-info-2:hover,
+.cursuri-info-3:hover {
+    color: #499fab;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.fereastra-info-curs-1 {
+    float: right;
+    color: #000;
+    background: #ffffff url('../img/bg-exercitii-mate.jpg') repeat;
+    border: 1px solid #000;
+    max-width: 1150px;
+    margin-right: 2rem;
+}
+
+.header-info-curs-1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.fereastra-info-curs-1 > p {
+    font-size: 1.75rem;
+    line-height: 1.39;
+}
+
+.fereastra-info-curs-2 {
+    float: right;
+    color: #000;
+    background: #ffffff url('../img/bg-exercitii-mate.jpg') repeat;
+    border: 1px solid #000;
+    margin-right: 2rem;
+    max-width: 1150px;
+    display: none;
+}
+
+.header-info-curs-2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.fereastra-info-curs-2 > p {
+    font-size: 1.75rem;
+    line-height: 1.39;
+}
+
+.fereastra-info-curs-3 {
+    float: right;
+    color: #000;
+    background: #ffffff url('../img/bg-exercitii-mate.jpg') repeat;
+    border: 1px solid #000;
+    margin-right: 2rem;
+    max-width: 1150px;
+    display: none;
+}
+
+.header-info-curs-3 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.fereastra-info-curs-3 > p {
+    font-size: 1.75rem;
+    line-height: 1.39;
+}
+
+/*CSS PENTRU exercitii-info.HTML*/
+/*CSS PENTRU exercitii-info.HTML*/
+/*CSS PENTRU exercitii-info.HTML*/
+/*CSS PENTRU exercitii-info.HTML*/
+/*CSS PENTRU exercitii-info.HTML*/
+/*CSS PENTRU exercitii-info.HTML*/
+/*ESTE FOLOSIT ACELASI CSS PENTRU HEADER, FOOTER CA LA PAGINA-info.HTML*/
+
+#exercitii-info-container {
+    max-width: 1500px;
+    margin: 0 auto; /*meniul este centrat orizontal*/
+    background-color: #fff;
+    height: 100%;
+}
+
+#exercitii-info-centru {
+    font-size: 5rem;
+    color: #000;
+    font-family: 'Proxima Nova', 'Roboto Condensed';
+    margin-top: 2rem;
+    overflow: hidden;
+}
+
+.semestrul1-exercitii-info {
+    background: linear-gradient(to right, #87cebf, #86cdbf 50%, #bedde1 70%, #fff);
+    width: 95%;
+    padding: 1rem 0 1rem 3rem;
+    margin-bottom: 1.25rem;
+    margin-left: 2rem;
+    color: #fff;
+}
+
+.exercitii-info-lista {
+    font-size: 3.2rem;
+    margin-left: 2rem;
+    color: #fff;
+    float: left;
+
+}
+
+.exercitii-info-lista > li {
+        background-color: #7ec7bc;
+        height: 4rem;
+        line-height: 4rem;
+        max-width: 250px;
+        width: 100%;
+        margin-bottom: 0.8rem;
+        padding-left: 1rem;
+        text-transform: capitalize;
+        cursor: pointer;
+}
+
+.exercitii-info-1:hover,
+.exercitii-info-2:hover,
+.exercitii-info-3:hover {
+    color: #499fab;
+    transition: 0.25s;
+    exercitiior: pointer;
+}
+
+.fereastra-info-exercitii-1 {
+    float: right;
+    color: #000;
+    background: #ffffff url('../img/bg-exercitii-mate.jpg') repeat;
+    border: 1px solid #000;
+    max-width: 1150px;
+    margin-right: 2rem;
+}
+
+.header-info-exercitii-1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.fereastra-info-exercitii-1 > p {
+    font-size: 1.75rem;
+    line-height: 1.39;
+}
+
+.fereastra-info-exercitii-2 {
+    float: right;
+    color: #000;
+    background: #ffffff url('../img/bg-exercitii-mate.jpg') repeat;
+    border: 1px solid #000;
+    margin-right: 2rem;
+    max-width: 1150px;
+    display: none;
+}
+
+.header-info-exercitii-2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.fereastra-info-exercitii-2 > p {
+    font-size: 1.75rem;
+    line-height: 1.39;
+}
+
+.fereastra-info-exercitii-3 {
+    float: right;
+    color: #000;
+    background: #ffffff url('../img/bg-exercitii-mate.jpg') repeat;
+    border: 1px solid #000;
+    margin-right: 2rem;
+    max-width: 1150px;
+    display: none;
+}
+
+.header-info-exercitii-3 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.fereastra-info-exercitii-3 > p {
+    font-size: 1.75rem;
+    line-height: 1.39;
+}
+
+/*CSS PENTRU VARIANTE-MATE.HTML*/
+/*CSS PENTRU VARIANTE-MATE.HTML*/
+/*CSS PENTRU VARIANTE-MATE.HTML*/
+/*CSS PENTRU VARIANTE-MATE.HTML*/
+/*CSS PENTRU VARIANTE-MATE.HTML*/
+/*CSS PENTRU VARIANTE-MATE.HTML*/
+
+#variante-bacalaureat-mate-container {
+    max-width: 1500px;
+    margin: 0 auto; /*meniul este centrat orizontal*/
+    background-color: #fff;
+    height: 100%;
+}
+
+#variante-bacalaureat-mate-centru {
+    font-size: 5rem;
+    color: #000;
+    font-family: 'Proxima Nova', 'Roboto Condensed';
+    margin-top: 2rem;
+    overflow: hidden;
+    width: 100%;
+}
+
+.semestrul1-variante-bacalaureat-mate {
+    background: linear-gradient(to right, #499fab, #86bfc7 20%, #abd3d8 50%, #fff);
+    width: 95%;
+    padding: 1rem 0 1rem 3rem;
+    margin-bottom: 1.25rem;
+    margin-left: 2rem;
+    color: #fff;
+}
+
+.variante-bacalaureat-mate-lista {
+    font-size: 3rem;
+    margin-left: 2rem;
+    color: #fff;
+    float: left;
+    width: 25%;
+}
+
+    .variante-bacalaureat-mate-lista > li {
+        height: 4rem;
+        line-height: 4rem;
+        max-width: 250px;
+        width: 100%;
+        background-color: #429ba8;
+        margin-bottom: 0.8rem;
+        padding-left: 1rem;
+    }
+
+.fereastra-mate-variante-bacalaureat-1,
+.fereastra-mate-variante-bacalaureat-2,
+.fereastra-mate-variante-bacalaureat-3 {
+    float: right;
+    width: 70%;
+    height: 100vh;
+}
+
+.vbac1,
+.vbac2,
+.vbac3{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.header-mate-variante-bacalaureat-1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.fereastra-mate-variante-bacalaureat-1 > p {
+    font-size: 2rem;
+}
+
+.fereastra-mate-variante-bacalaureat-2 {
+    display: none;
+}
+
+.header-mate-variante-bacalaureat-2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.fereastra-mate-variante-bacalaureat-2 > p {
+    font-size: 2rem;
+}
+
+.fereastra-mate-variante-bacalaureat-3 {
+    display: none;
+}
+
+.header-mate-variante-bacalaureat-3 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.fereastra-mate-variante-bacalaureat-3 > p {
+    font-size: 2rem;
+}
+
+/*CSS PENTRU VARIANTE-info.HTML*/
+/*CSS PENTRU VARIANTE-info.HTML*/
+/*CSS PENTRU VARIANTE-info.HTML*/
+/*CSS PENTRU VARIANTE-info.HTML*/
+/*CSS PENTRU VARIANTE-info.HTML*/
+/*CSS PENTRU VARIANTE-info.HTML*/
+
+#variante-bacalaureat-info-container {
+    max-width: 1500px;
+    margin: 0 auto; /*meniul este centrat orizontal*/
+    background-color: #fff;
+    height: 100%;
+}
+
+#variante-bacalaureat-info-centru {
+    font-size: 5rem;
+    color: #000;
+    font-family: 'Proxima Nova', 'Roboto Condensed';
+    margin-top: 2rem;
+    overflow: hidden;
+    width: 100%;
+}
+
+.semestrul1-variante-bacalaureat-info {
+    background: linear-gradient(to right, #87cebf, #86cdbf 50%, #bedde1 70%, #fff);
+    width: 95%;
+    padding: 1rem 0 1rem 3rem;
+    margin-bottom: 1.25rem;
+    margin-left: 2rem;
+    color: #fff;
+}
+
+.variante-bacalaureat-info-lista {
+    font-size: 3rem;
+    margin-left: 2rem;
+    color: #fff;
+    float: left;
+    width: 25%;
+}
+
+    .variante-bacalaureat-info-lista > li {
+        height: 4rem;
+        line-height: 4rem;
+        max-width: 250px;
+        width: 100%;
+        background-color: #87cebf;
+        margin-bottom: 0.8rem;
+        padding-left: 1rem;
+    }
+
+.fereastra-info-variante-bacalaureat-1,
+.fereastra-info-variante-bacalaureat-2,
+.fereastra-info-variante-bacalaureat-3 {
+    float: right;
+    width: 70%;
+    height: 100vh;
+}
+
+.variante-bacalaureat-info-1:hover ~ .vbac1 {
+    transform: rotate(30deg);
+}
+
+.vbac1,
+.vbac2,
+.vbac3 {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.header-info-variante-bacalaureat-1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.fereastra-info-variante-bacalaureat-1 > p {
+    font-size: 2rem;
+}
+
+.fereastra-info-variante-bacalaureat-2 {
+    display: none;
+}
+
+.header-info-variante-bacalaureat-2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.fereastra-info-variante-bacalaureat-2 > p {
+    font-size: 2rem;
+}
+
+.fereastra-info-variante-bacalaureat-3 {
+    display: none;
+}
+
+.header-info-variante-bacalaureat-3 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.fereastra-info-variante-bacalaureat-3 > p {
+    font-size: 2rem;
+}
+
+/*LUCRAM LA SCALABILITATE IN PUNCTELE IN CARE DESIGNUL SE STRICA ///neterminat, lipsa de timp*/
+
+/*pentru index.html*/
+
+@media only screen and (max-width: 1000px) {
+    #mate {
+        background-color: #429ba8;
+        background-image: none;
+        font-size: 3rem;
+    }
+
+        #mate:before {
+            background: none;
+        }
+
+    #info {
+        background-color: #87cebf;
+        background-image: none;
+        font-size: 3rem;
+    }
+
+        #info:before {
+            background: none;
+        }
+}
+@media only screen and (max-height: 650px) {
+    #mate {
+        background-color: #429ba8;
+        background-image: none;
+        font-size: 3rem;
+    }
+
+        #mate:before {
+            background: none;
+        }
+
+    #info {
+        background-color: #87cebf;
+        background-image: none;
+        font-size: 3rem;
+    }
+
+        #info:before {
+            background: none;
+        }
+}
+
+@media only screen and (max-width: 1400px) {
+    .fereastra-mate-curs-1,
+    .fereastra-mate-curs-2,
+    .fereastra-mate-curs-3,
+    .fereastra-info-curs-1,
+    .fereastra-info-curs-2,
+    .fereastra-info-curs-3,
+    .fereastra-mate-exercitii-1,
+    .fereastra-mate-exercitii-2,
+    .fereastra-mate-exercitii-3,
+    .fereastra-info-exercitii-1,
+    .fereastra-info-exercitii-2,
+    .fereastra-info-exercitii-3
+    {
+        max-width: 1000px;
+    }
+    .fereastra-mate-curs-1 > p,
+    .fereastra-mate-curs-2 > p,
+    .fereastra-mate-curs-3 > p,
+    .fereastra-info-curs-1 > p,
+    .fereastra-info-curs-2 > p,
+    .fereastra-info-curs-3 > p,
+    .fereastra-mate-exercitii-1 > p,
+    .fereastra-mate-exercitii-2 > p,
+    .fereastra-mate-exercitii-3 > p,
+    .fereastra-info-exercitii-1 > p,
+    .fereastra-info-exercitii-2 > p,
+    .fereastra-info-exercitii-3 > p {
+        font-size: 1.66rem;
+    }
+}
+
